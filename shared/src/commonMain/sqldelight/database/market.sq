@@ -1,0 +1,24 @@
+CREATE TABLE market(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    code TEXT NOT NULL,
+    value REAL NOT NULL
+);
+
+getMarket:
+SELECT *
+FROM market
+ORDER BY name;
+
+insertCryptocurrencyEntity:
+INSERT OR REPLACE
+INTO market(
+    id,
+    name,
+    code,
+    value
+)
+VALUES (?, ?, ?, ?);
+
+deleteAll:
+DELETE FROM market;
